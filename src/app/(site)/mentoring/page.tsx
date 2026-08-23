@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { BiArrowBack, BiLeftArrowAlt } from "react-icons/bi";
 
@@ -224,9 +225,9 @@ ${formData.message || "—"}
         <div className="mb-5 lg:hidden">
           <div className="flex items-center justify-between rounded-[24px] border border-white/70 bg-white/45 px-5 py-4 shadow-[0_12px_40px_rgba(20,70,62,0.08)] backdrop-blur-2xl">
             <div>
-              <p className="text-[11px] font-bold tracking-[0.2em] text-[#006558]">
+              <Link href={'https://yarandievent.com'} className="text-[11px] font-bold tracking-[0.2em] text-[#006558]">
                 YARANDI EVENT
-              </p>
+              </Link>
 
               <p className="mt-1 text-xs font-medium text-[#4d5e5a]">
                 {showReview ? "بررسی درخواست" : "مشاوره اولیه رویداد"}
@@ -274,7 +275,7 @@ ${formData.message || "—"}
               </div>
 
               {/* Steps */}
-              <div className="rounded-[28px] border border-white/75 bg-white/35 p-3 shadow-[0_20px_50px_rgba(30,80,70,0.09)] backdrop-blur-2xl">
+              <div className="rounded-[28px]  border border-white/75 bg-white/35 p-3 shadow-[0_20px_50px_rgba(30,80,70,0.09)] backdrop-blur-2xl">
                 {steps.map((item, index) => {
                   const isActive = index === currentStep && !showReview;
                   const isCompleted = index < currentStep || showReview;
@@ -288,7 +289,7 @@ ${formData.message || "—"}
                           setCurrentStep(index);
                         }
                       }}
-                      className={`group relative flex w-full items-center gap-4 rounded-[20px] px-4 py-4 text-right transition-all duration-300 ${
+                      className={`group cursor-pointer relative flex w-full items-center gap-4 rounded-[20px] px-4 py-4 text-right transition-all duration-300 ${
                         isActive
                           ? "border border-white/80 bg-white/60 shadow-[0_8px_25px_rgba(20,70,62,0.08)] backdrop-blur-xl"
                           : "border border-transparent hover:bg-white/30"
@@ -702,7 +703,9 @@ ${formData.message || "—"}
               disabled={currentStep === 0}
               className="relative z-10 flex min-h-[48px] flex-1 items-center justify-center rounded-[17px] border border-white/80 bg-white/45 px-3 text-xs font-bold text-[#60706B] shadow-[0_5px_15px_rgba(20,70,62,0.05)] backdrop-blur-xl transition active:scale-[0.97] disabled:pointer-events-none disabled:opacity-30"
             >
-              <span className="ml-2 text-base">→</span>
+              <span className="ml-2 text-base">
+                <BiArrowBack className="rotate-180" />
+              </span>
               مرحله قبل
             </button>
 
@@ -729,7 +732,7 @@ ${formData.message || "—"}
                 ادامه
 
                 <span className="text-base transition-transform group-active:-translate-x-1">
-                  ←
+                  <BiArrowBack />
                 </span>
               </button>
             ) : (
