@@ -166,7 +166,7 @@ ${formData.message || "—"}
   };
 
   const sendToTelegram = () => {
-    const telegramUsername = "Cubeeee1";
+    const telegramUsername = "AlirezaYarandY";
 
     const telegramUrl = `https://t.me/${telegramUsername}?text=${encodeURIComponent(
       requestText
