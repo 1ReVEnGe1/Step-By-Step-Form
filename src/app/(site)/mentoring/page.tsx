@@ -259,9 +259,9 @@ ${formData.message || "—"}
                   <img className="w-20 h-14 object-contain" src={'/pics/yarandi-event-logo.webp'} />
                 </div>
 
-                <p className="text-xs font-bold tracking-[0.18em] text-[#006558]">
+                <Link href={'https://yarandievent.com'} className="text-xs font-bold tracking-[0.18em] text-[#006558]">
                   YARANDI EVENT
-                </p>
+                </Link>
 
                 <h2 className="mt-3 text-xl font-bold leading-8 text-[#172321]">
                   درخواست
