@@ -44,10 +44,8 @@ export const authOptions : NextAuthOptions = {
 
         const RegisteredRole = Role;
         const RegisteredPermission = Permission;
-        console.log(credentials.phone);
 
         const users = await User.find()
-        console.log(users);
         const user = await User.findOne({ phone: credentials.phone })
           .populate({
             path: "role",
@@ -58,8 +56,6 @@ export const authOptions : NextAuthOptions = {
             },
           })
           .lean();
-
-        console.log(user);
 
         if (!user) {
           throw new Error("کاربری با این شماره یافت نشد یا رمز عبور اشتباه است");
